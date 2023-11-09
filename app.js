@@ -58,7 +58,7 @@ app.put("/update_book/:id", async(req,res)=>{
         if(updateBook.modifiedCount > 0){
             res.status(200).json({success:true});
         }else{
-            res.status(404).json({success:false, message:"Book Up to dated Nothing to upadate"});
+            res.status(404).json({success:false, message:"Book Up to dated Nothing to upadate or the book with given id does not exist"});
         }
     } catch (error) {
         res.status(400).json({ error: error.message });
