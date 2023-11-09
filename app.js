@@ -1,11 +1,12 @@
 import express from "express";
-
+import dotenv from 'dotenv';
 import connectDB from "./config/db.js";
 import Books from "./models/book.js";
 
+dotenv.config();
 connectDB();
 const app = express();
-const port = 4000;
+const port = process.env.PORT;
 
 app.use(express.json());
 
